@@ -1,76 +1,74 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>UMA HUB Logo Karussell</title>
   <style>
     body {
       margin: 0;
-      background-color: #2b4c2c;
+      background-color: #edeadf;
       overflow: hidden;
+      font-family: sans-serif;
     }
 
-    .slider-container {
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      box-sizing: border-box;
-      padding: 20px 0;
-    }
-
-    .slider-track {
-      display: inline-block;
-      white-space: nowrap;
+    .carousel {
+      display: flex;
+      gap: 80px;
+      padding: 40px 0;
       animation: scroll 15s linear infinite;
+      width: max-content;
+      align-items: center;
     }
 
-    .slider-track img {
+    .carousel-wrapper {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .carousel img {
       height: 40px;
-      margin: 0 30px;
-      vertical-align: middle;
-      filter: brightness(0) invert(1);
-      opacity: 0.85;
-      transition: transform 0.3s ease;
+      filter: grayscale(100%) brightness(0.2);
+      opacity: 0.7;
+      transition: all 0.3s ease;
     }
 
-    .slider-track img:hover {
-      transform: scale(1.1);
+    .carousel img:hover {
       opacity: 1;
+      filter: grayscale(0%) brightness(1);
     }
 
     @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
     }
   </style>
 </head>
 <body>
-  <div class="slider-container">
-    <div class="slider-track">
-      <!-- Dummy-Logos (10 Logos, 2x für Endlosschleife) -->
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/YouTube_Logo_2017.svg/2560px-YouTube_Logo_2017.svg.png" alt="Logo1">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Instagram_logo_2022.svg" alt="Logo2">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Twitch_logo_2019.svg" alt="Logo3">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/TikTok_logo.svg" alt="Logo4">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Spotify_Logo_RGB_White.png" alt="Logo5">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Soundcloud_logo_white.png" alt="Logo6">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Zoom_Communications_Logo.svg" alt="Logo7">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Discord_logo.svg" alt="Logo8">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/LinkedIn_Logo.svg" alt="Logo9">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Podcasts_logo.svg" alt="Logo10">
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      <!-- Logos (dupliziert für Endloslauf) -->
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/YouTube_Logo_2017.svg" alt="YouTube" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Instagram_logo_2022.svg" alt="Instagram" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Twitch_logo_2019.svg" alt="Twitch" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/TikTok_logo.svg" alt="TikTok" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Spotify_Logo_RGB_White.png" alt="Spotify" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Soundcloud_logo_white.png" alt="SoundCloud" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Discord_logo.svg" alt="Discord" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/LinkedIn_Logo.svg" alt="LinkedIn" />
 
-      <!-- Wiederholung für Endlos-Loop -->
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/YouTube_Logo_2017.svg/2560px-YouTube_Logo_2017.svg.png" alt="Logo1">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Instagram_logo_2022.svg" alt="Logo2">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Twitch_logo_2019.svg" alt="Logo3">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/TikTok_logo.svg" alt="Logo4">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Spotify_Logo_RGB_White.png" alt="Logo5">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Soundcloud_logo_white.png" alt="Logo6">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Zoom_Communications_Logo.svg" alt="Logo7">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Discord_logo.svg" alt="Logo8">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/LinkedIn_Logo.svg" alt="Logo9">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Podcasts_logo.svg" alt="Logo10">
+      <!-- Duplikat für Loop -->
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/YouTube_Logo_2017.svg" alt="YouTube" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Instagram_logo_2022.svg" alt="Instagram" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Twitch_logo_2019.svg" alt="Twitch" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/TikTok_logo.svg" alt="TikTok" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Spotify_Logo_RGB_White.png" alt="Spotify" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Soundcloud_logo_white.png" alt="SoundCloud" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Discord_logo.svg" alt="Discord" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/LinkedIn_Logo.svg" alt="LinkedIn" />
     </div>
   </div>
 </body>
