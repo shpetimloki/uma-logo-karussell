@@ -1,43 +1,54 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>UMA HUB Logo Karussell</title>
+  <title>UMA HUB JS Logo Karussell</title>
   <style>
     body {
       margin: 0;
       background-color: #edeadf;
-      overflow: hidden;
       font-family: sans-serif;
     }
 
-    .carousel {
-      display: flex;
-      gap: 80px;
+    .section {
       padding: 40px 0;
-      animation: scroll 15s linear infinite;
-      width: max-content;
-      align-items: center;
+      text-align: center;
     }
 
-    .carousel-wrapper {
+    .section h2 {
+      margin-bottom: 30px;
+      font-size: 24px;
+      font-weight: 600;
+      color: #2b4c2c;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .slider-container {
       overflow: hidden;
-      width: 100%;
+      white-space: nowrap;
     }
 
-    .carousel img {
+    .slider-track {
+      display: inline-flex;
+      align-items: center;
+      animation: scroll-left 60s linear infinite;
+    }
+
+    .slider-track img {
       height: 40px;
+      margin: 0 60px;
       filter: grayscale(100%) brightness(0.2);
-      opacity: 0.7;
+      opacity: 0.8;
       transition: all 0.3s ease;
     }
 
-    .carousel img:hover {
+    .slider-track img:hover {
       opacity: 1;
       filter: grayscale(0%) brightness(1);
     }
 
-    @keyframes scroll {
+    @keyframes scroll-left {
       0% {
         transform: translateX(0);
       }
@@ -48,28 +59,27 @@
   </style>
 </head>
 <body>
-  <div class="carousel-wrapper">
-    <div class="carousel">
-      <!-- Logos (dupliziert für Endloslauf) -->
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/YouTube_Logo_2017.svg" alt="YouTube" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Instagram_logo_2022.svg" alt="Instagram" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Twitch_logo_2019.svg" alt="Twitch" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/TikTok_logo.svg" alt="TikTok" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Spotify_Logo_RGB_White.png" alt="Spotify" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Soundcloud_logo_white.png" alt="SoundCloud" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Discord_logo.svg" alt="Discord" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/LinkedIn_Logo.svg" alt="LinkedIn" />
-
-      <!-- Duplikat für Loop -->
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/YouTube_Logo_2017.svg" alt="YouTube" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Instagram_logo_2022.svg" alt="Instagram" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Twitch_logo_2019.svg" alt="Twitch" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/TikTok_logo.svg" alt="TikTok" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Spotify_Logo_RGB_White.png" alt="Spotify" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Soundcloud_logo_white.png" alt="SoundCloud" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Discord_logo.svg" alt="Discord" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/LinkedIn_Logo.svg" alt="LinkedIn" />
+  <div class="section">
+    <h2>Our Clients</h2>
+    <div class="slider-container" id="slider">
+      <div class="slider-track" id="slider-track">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/YouTube_Logo_2017.svg" alt="YouTube" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Instagram_logo_2022.svg" alt="Instagram" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Twitch_logo_2019.svg" alt="Twitch" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/TikTok_logo.svg" alt="TikTok" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Spotify_Logo_RGB_White.png" alt="Spotify" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Soundcloud_logo_white.png" alt="SoundCloud" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Discord_logo.svg" alt="Discord" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/LinkedIn_Logo.svg" alt="LinkedIn" />
+      </div>
     </div>
   </div>
+
+  <script>
+    // Dupliziere den Track für nahtlosen Loop
+    const track = document.getElementById('slider-track');
+    const clone = track.cloneNode(true);
+    track.parentNode.appendChild(clone);
+  </script>
 </body>
 </html>
